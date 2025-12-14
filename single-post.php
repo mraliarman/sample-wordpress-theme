@@ -68,6 +68,12 @@ if ( have_posts() ) :
 			?>
 		</article>
 
+		<?php // نمایش دیدگاه‌ها
+			if (comments_open() || get_comments_number()) {
+				comments_template();
+			}
+		?>
+
 		<!-- نوشته‌های مرتبط -->
 		<?php
 		$categories = wp_get_post_categories( get_the_ID() );
